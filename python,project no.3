@@ -1,0 +1,59 @@
+import datetime
+
+budget_limit = float(input("What is your maximum target budget for this week? $"))
+groceries = float(input("How much did you spend on groceries this week? $"))
+transport = float(input("How much did you spend on transport? $"))
+entertainment = float(input("How much did you spend on entertainment? $"))
+
+total=groceries+transport+entertainment
+today=datetime.date.today()
+
+if  total>budget_limit:
+    print(f" WARNING:you passed the budget limit by:${total-budget_limit}")
+else:
+    print()
+
+#groceries budget calculator
+
+
+print(f"your daily groceries budget is {total} according to the latest information")
+
+file_path="output.txt"
+
+with open(file_path,"w") as f:
+    f.write(" ====Your Daily Budget====\n")
+    f.write(f" Time when registered:{datetime}\n")
+    f.write(f"  Date when registered:{today}\n")
+    f.write(f"  Groceries:{groceries}\n ")
+    f.write(f"  Transport:{transport}\n")
+    f.write(f"  Entertainment:{entertainment}\n")
+    f.write(f"  Total:{total}\n")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
