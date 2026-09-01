@@ -1,0 +1,41 @@
+import datetime
+
+print(input("Welcome player 5 to our game: Pig Hill"))
+today=datetime.date.today()
+print(f"You currently joined at {today}")
+print(input("type continue to continue: "))
+#collect data
+name=input("type your name: ")
+age=input("type your age: ")
+gender=input("type your gender: ")
+country=input("type your country: ")
+score=input("Whats is your score")
+rank=input("type your rank: ")
+score=int(score)
+if score<=1000:
+    print("Rookie ")
+elif score>=1000:
+    print("Climber")
+elif score>2000:
+    print("Advanced Climber")
+else:
+    print("Legend")
+joined_time = now.strftime("%H:%M:%S")
+
+import csv
+file_path="output.csv"
+with open(file_path,"w") as f:
+    f.write("name\n")
+    f.write(f"{name}\n")
+    f.write("Age\n")
+    f.write(f"{age}\n")
+    f.write("Gender\n")
+    f.write(f"{gender}\n")
+    f.write("Country\n")
+    f.write(f"{country}\n")
+    f.write("Scored\n")
+    f.write(f"{score}\n")
+    f.write(f"joined at: {today}")
+    f.write(f"joined_time: {joined_time}")
+    f.write(f"Your rank:{rank}")
+    print("Thanks for playing")
