@@ -1,0 +1,44 @@
+import csv
+import datetime
+while True:
+    print("========PARANORMAL ACTIVITIES========")
+    print("1.LOG ACTIVITIES")
+    print("2.REVIEW LOGS")
+
+
+    choice=input("Enter your a number through(1-3): ")
+
+    if choice == "1":
+        if choice == "1":
+            print("WELCOME TO SECTION LOG ACTIVITIES")
+            activities = input("PLEASE LOG THE ACTIVITIES: ")
+            print("THANKS FOR LOGGING!!")
+            file_path = "output.csv"
+            today = datetime.date.today()
+            # Use 'with' instead of 'while', and 'a' (append) so it doesn't overwrite old logs
+            with open(file_path, mode="a", newline="") as f:
+                writer = csv.writer(f)
+                writer.writerow(["=====PARANORMAL ACTIVITIES LOGGER====="])
+                writer.writerow([today,activities])
+
+    elif choice == "2":
+        print("WELCOME TO THE REVIEW LOG SECTION")
+    while True:
+        import csv
+        file_path="output.csv"
+        reviews=input("Please type the secret LETTER: ")
+        if reviews =="N":
+            print("CODE CORRECT!!")
+            try:
+                with open(file_path, "r") as f:
+                    reader = csv.reader(f)
+                    for row in reader:
+                        print(row)
+            except FileNotFoundError:
+                print("No log file found yet. Log an activity first!")
+
+        elif reviews =="":
+            break
+
+        else:
+            print("code wrong")
